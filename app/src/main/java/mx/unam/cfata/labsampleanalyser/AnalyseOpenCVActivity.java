@@ -14,6 +14,7 @@ import org.opencv.imgproc.Imgproc;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
 
@@ -79,7 +80,10 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
         Mat circles = new Mat();
         Imgproc.blur(input, input, new Size(7, 7), new Point(2, 2));
         Imgproc.HoughCircles(input, circles, Imgproc.CV_HOUGH_GRADIENT, 2, 100, 100, 90, 0, 1000);
-        Log.i(TAG, String.valueOf("size: " + circles.cols()) + ", " + String.valueOf(circles.rows()));
+        Log.i(TAG, String.valueOf("Number of Organisms: " + circles.cols()));
+//        int numberO = circles.cols();
+//        TextView numberOrganisms = (TextView) findViewById(R.id.OrganismCount);
+//        numberOrganisms.setText("Number of Organisms: " + numberO);
         if (circles.cols() > 0) {
             for (int x=0; x < Math.min(circles.cols(), 5); x++ ) {
                 double circleVec[] = circles.get(0, x);
