@@ -33,13 +33,14 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
+        mToggle.setDrawerIndicatorEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Navigation View Handle
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // Main Fragment (Analyse) set on create
+        // Main Fragment (Archive) set on create
         ArchiveFragment archiveFragment = new ArchiveFragment();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction()
@@ -125,6 +126,7 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
         }
 
         getSupportActionBar().setTitle(item.getTitle());
+
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mDrawerLayout.closeDrawer(GravityCompat.START);
