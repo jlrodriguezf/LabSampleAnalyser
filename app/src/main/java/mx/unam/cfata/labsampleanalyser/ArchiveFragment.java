@@ -27,3 +27,4 @@ public class ArchiveFragment extends Fragment {
     }
 
 }
+//TODO: Fill Archive fragment: Previously scanner organisms

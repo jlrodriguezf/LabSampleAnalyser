@@ -27,3 +27,4 @@ public class SettingsFragment extends Fragment {
     }
 
 }
+//TODO: Fill Settings fragment: Hough Alrogithm Parameters

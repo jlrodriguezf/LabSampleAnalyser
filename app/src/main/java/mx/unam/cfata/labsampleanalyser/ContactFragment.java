@@ -27,3 +27,4 @@ public class ContactFragment extends Fragment {
     }
 
 }
+//TODO: Fill Contact fragment

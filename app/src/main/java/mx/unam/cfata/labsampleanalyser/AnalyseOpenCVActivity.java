@@ -62,7 +62,7 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
         if (mOpenCvCameraView != null)
             mOpenCvCameraView.disableView();
     }
-
+//TODO: Remove StatusBar on Camera
     @Override
     public void onCameraViewStarted(int width, int height) {
 
@@ -80,6 +80,7 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
         Mat circles = new Mat();
         Imgproc.blur(input, input, new Size(7, 7), new Point(2, 2));
         Imgproc.HoughCircles(input, circles, Imgproc.CV_HOUGH_GRADIENT, 2, 100, 100, 90, 0, 1000);
+        //TODO: TextView Number of Organisms without crashing
         Log.i(TAG, String.valueOf("Number of Organisms: " + circles.cols()));
 //        int numberO = circles.cols();
 //        TextView numberOrganisms = (TextView) findViewById(R.id.OrganismCount);

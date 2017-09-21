@@ -139,3 +139,4 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
         getActionBar().setTitle(mTitle);
     }
 }
+//FIXME: Selected Item Highligh only works on Archive and Analyse
