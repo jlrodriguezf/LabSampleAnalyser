@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context="mx.unam.cfata.labsampleanalyser.SettingsFragment">
+
+            <android.support.v7.preference.PreferenceCategory android:title="@string/pref_cat_1">
+
+                    <mx.unam.cfata.labsampleanalyser.CustomSeekBarPreference
+                        android:key="pref_hough_dp"
+                        android:title="@string/pref_hough_dp"
+                        android:summary="@string/pref_hough_dp_summ"
+                        android:defaultValue="1"
+                        android:max="10" />
+
+                    <mx.unam.cfata.labsampleanalyser.CustomSeekBarPreference
+                        android:key="pref_hough_minDist  "
+                        android:title="@string/pref_hough_minDist"
+                        android:summary="@string/pref_hough_minDist_summ"
+                        android:defaultValue="75"
+                        android:max="200" />
+
+                    <mx.unam.cfata.labsampleanalyser.CustomSeekBarPreference
+                        android:key="pref_hough_oedt  "
+                        android:title="@string/pref_hough_oedt"
+                        android:summary="@string/pref_hough_oedt_summ"
+                        android:defaultValue="50"
+                        android:max="200" />
+
+                    <mx.unam.cfata.labsampleanalyser.CustomSeekBarPreference
+                        android:key="pref_hough_ofdt"
+                        android:title="@string/pref_hough_ofdt"
+                        android:summary="@string/pref_hough_ofdt_summ"
+                        android:defaultValue="20"
+                        android:max="200" />
+
+                    <mx.unam.cfata.labsampleanalyser.CustomSeekBarPreference
+                        android:key="pref_hough_minRad"
+                        android:title="@string/pref_hough_minRad"
+                        android:summary="@string/pref_hough_minRad_summ"
+                        android:defaultValue="0"
+                        android:max="200" />
+
+                    <mx.unam.cfata.labsampleanalyser.CustomSeekBarPreference
+                        android:key="pref_hough_maxRad"
+                        android:title="@string/pref_hough_maxRad"
+                        android:summary="@string/pref_hough_maxRad_summ"
+                        android:defaultValue="0"
+                        android:max="200" />
+
+                </android.support.v7.preference.PreferenceCategory>
+
+</android.support.v7.preference.PreferenceScreen>

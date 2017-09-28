@@ -2,6 +2,150 @@
 <items version="2" >
 
     <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\4f8b900f4e5b8a77492e3367697f60a29eab59db\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="4961be1437163ab598620a3c907c0f3432936f51">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_59f435d3a13d18322fb363774cbed527ec4cf33c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\4519a663c3828448ab7feddd7fcaa578c4ce3051\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a7a0aa678c3bbadb67fb41df9e107f7ee9087902">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d89cc4a360ccba3fd01d6e00945798f795d554e9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\3216edccac8954b5ee352200380ff8802b653797\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="05e3d15c623cd98f0eb43c8249fb6151fae0786c">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c35226bd69a962cb76a3e3c4d5ac6276628c4fa5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9317b8eab89414065d6373c534d9f6f689b19b7d">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_b207b704ae645015e78014b16cdd0f6d041c6b89\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Choche\.android\build-cache\28b80808348381218440f7176671c399e2e47591\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_9585b0931726b5ac880149e11df88cb0049f4bda.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Choche\.android\build-cache\9bcc5d56a5dab68048d9716d31b27979c86165e3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_aef06842b02108ff616c24d58149e2489be7dda5.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\6af77e20e61e79949b83b13e02423e37790cba07\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b77e50b3c31d0fc64148530f7077f79ec114b5b9">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_73da76403da0a30742a296185e5cd170ae2f52e6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\6c2f71383b6917ea870ad9fed8158e9eeced7e00\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="40a6b8f05124eb9e6012e18b80a6dbd13440e283">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_95b503de29e3abfe17e935de8478a752e6f60504\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\b6640e5e64d6a66e4056d734cfb19e3c37480f53\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a64026daf4819a589aea776f5deb19b257a104d1">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a5e2c6a579177a757431021792e61adc9af532aa\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Choche\.android\build-cache\47ccda82b79217658089c6271b49fc2fcd1d1ffd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_151752fd9559d45fc423d22a6862ec3c7dd82f7a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Choche\.android\build-cache\11efb3bc01356b96d8adf37c570a834b1fefd0e8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_87850ae02f3ebcb80d86469cc15db1872fff6574.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Choche\.android\build-cache\f134a1a37894aeb2cac19ff263801127c375bbb2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_233f10be7947960bf8bf415925a7cbafbc7fdc13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Choche\.android\build-cache\df0f295d4fd442cc9b27c106e8a49d3305efa63b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_165a744ac82ac476fb98a00789cbe1afbae2538f.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\e49c6e1f7e0890997b649e37cc92ff10a5e627e8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a7193c749b0fe51c63fb858ff293ff33d4b3db96\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\1078820cfae3e90272965428d8618e50c26356d5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="cad1364721fc716a39bdc351d3637edb634c9aa5">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c5388024995c026b75c313f976c6619f91a5ec55\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\b85e22810d1a9109b5d3dbd4232bd357cb7cbae7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c2deeac83ffa1304264bc755c2ddb84e7a7fa239">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_49d0a2a5a4ae0c693169ce2cf760b42524309035\classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="C:\Users\Choche\.android\build-cache\3aaf014c663312987a6e3d1b9061b61ca952a61e\output\jars\classes.jar"
         jumboMode="false"
@@ -9,6 +153,33 @@
         revision="26.0.1"
         sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
         <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_f9ad0f9fc7a6456d9641d400e3de2f8f442961eb.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\25.4.0\f6a2fc748ae3769633dea050563e1613e93c135e\support-annotations-25.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f6a2fc748ae3769633dea050563e1613e93c135e">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.4.0_9b8c2503e64d499d1f91182a4c1b9c39db28a9b0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\04624f511af31461ca944baed61ca3354b5e8cc8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b1e0cd070d7cf659ece90e919bff76e7ddc32532">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6243def908e4e98435f5df4503cc74b7f993b63f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\6f384383e683877cc6f9cfe96069eabe8d7fd6e3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2bec381d4ffc4ae89124e3083ff446f9c468dda0">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_68215c583e2b97a518732546eafbbb6ba5ae5a77\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -57,12 +228,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Choche\.android\build-cache\b39b31a258167507e5262edd8cd226b6fea4b664\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="a21ce8c5f6eb9d2bc3ef0e50a2ba7b62793c8dcf">
-        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_b207b704ae645015e78014b16cdd0f6d041c6b89\classes.dex" />
+        sha1="824923b2ab3133cbf3c315a7c59ea300f1e17d78">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4d7f19b580e49bbea32ac084c2155a171162d790\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\3b2bb1776f14948b53901214c394fa702146bf74\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e04f28ac2dd9bbe48ced6fc87fedf46c2586f5d6">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_870ec01ff8fd0cdefe93d16179ec968787e3b67d\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -74,22 +254,13 @@
         <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_5bd63dd85293b90069f024d499f0cc5eeed8f7f6.jar" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\Choche\.android\build-cache\28b80808348381218440f7176671c399e2e47591\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\Choche\.android\build-cache\f08e84320c396d0e590c11943b9cab500641bd27\output\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_9585b0931726b5ac880149e11df88cb0049f4bda.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Choche\.android\build-cache\9bcc5d56a5dab68048d9716d31b27979c86165e3\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_aef06842b02108ff616c24d58149e2489be7dda5.jar" />
+        sha1="d29e451fd5bcc265989bf80afd4f149d95d72e7d">
+        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4f9fb547c817b601c74d172baf6d7ac08d5da07c\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -110,15 +281,6 @@
         <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_f5eb417cdf946f33c1f3c25a640c172315aeff43.jar" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\Choche\.android\build-cache\47ccda82b79217658089c6271b49fc2fcd1d1ffd\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_151752fd9559d45fc423d22a6862ec3c7dd82f7a.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
@@ -129,39 +291,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Choche\.android\build-cache\11efb3bc01356b96d8adf37c570a834b1fefd0e8\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_87850ae02f3ebcb80d86469cc15db1872fff6574.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\Choche\.android\build-cache\420f43a2a197603e9dc870c2765bf1cc538e9051\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.1"
         sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
         <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_301166c4d075da2903233b1152e8971565be03a3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Choche\.android\build-cache\f134a1a37894aeb2cac19ff263801127c375bbb2\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_233f10be7947960bf8bf415925a7cbafbc7fdc13.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Choche\.android\build-cache\df0f295d4fd442cc9b27c106e8a49d3305efa63b\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="C:\Users\Choche\Documents\CV_UOCA\LabSampleAnalyser\app\build\intermediates\pre-dexed\debug\classes_165a744ac82ac476fb98a00789cbe1afbae2538f.jar" />
     </item>
 
 </items>

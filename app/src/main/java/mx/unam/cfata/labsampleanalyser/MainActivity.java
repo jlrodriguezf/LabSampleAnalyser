@@ -81,7 +81,7 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
             ArchiveFragment archiveFragment = new ArchiveFragment();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction()
-                    .setCustomAnimations(R.anim.anim_slide_in_from_left, R.anim.anim_slide_out_from_left)
+                    //.setCustomAnimations(R.anim.anim_slide_in_from_left, R.anim.anim_slide_out_from_left)
                     .replace(R.id.relLayout4F,
                             archiveFragment,
                             archiveFragment.getTag()
@@ -93,7 +93,7 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
             SettingsFragment settingsFragment = new SettingsFragment();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction()
-                    .setCustomAnimations(R.anim.anim_slide_in_from_left, R.anim.anim_slide_out_from_left)
+                    //.setCustomAnimations(R.anim.anim_slide_in_from_left, R.anim.anim_slide_out_from_left)
                     .replace(R.id.relLayout4F,
                             settingsFragment,
                             settingsFragment.getTag()
@@ -105,7 +105,7 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
             ContactFragment contactFragment = new ContactFragment();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction()
-                    .setCustomAnimations(R.anim.anim_slide_in_from_left, R.anim.anim_slide_out_from_left)
+                    //.setCustomAnimations(R.anim.anim_slide_in_from_left, R.anim.anim_slide_out_from_left)
                     .replace(R.id.relLayout4F,
                             contactFragment,
                             contactFragment.getTag()
@@ -117,7 +117,7 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
             HelpFragment helpFragment = new HelpFragment();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction()
-                    .setCustomAnimations(R.anim.anim_slide_in_from_left, R.anim.anim_slide_out_from_left)
+                    //.setCustomAnimations(R.anim.anim_slide_in_from_left, R.anim.anim_slide_out_from_left)
                     .replace(R.id.relLayout4F,
                             helpFragment,
                             helpFragment.getTag()

@@ -1,5 +1,18 @@
 <resources>
-    <string name="app_name">LabSampleAnalyser</string>
+    <string name="app_name">Lab Sample Analyser</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="pref_hough_dp">Ratio of accumulator</string>
+    <string name="pref_hough_dp_summ">The inverse ratio of resolution</string>
+    <string name="pref_hough_minDist">Minimum distance between circles</string>
+    <string name="pref_hough_minDist_summ">Minimum distance between the centers of the detected organisms</string>
+    <string name="pref_hough_oedt">Threshold of edge detection</string>
+    <string name="pref_hough_oedt_summ">Gradient value to handle organism edge detection</string>
+    <string name="pref_hough_ofdt">Threshold of organism centers</string>
+    <string name="pref_hough_ofdt_summ">Gradient value to handle organism form detection</string>
+    <string name="pref_hough_minRad">Minimum circle radius</string>
+    <string name="pref_hough_minRad_summ">Minimum radio to be detected</string>
+    <string name="pref_hough_maxRad">Maximum circle radius</string>
+    <string name="pref_hough_maxRad_summ">Maximum radio to be detected</string>
+    <string name="pref_cat_1">Algorithm Parameters</string>
 </resources>
