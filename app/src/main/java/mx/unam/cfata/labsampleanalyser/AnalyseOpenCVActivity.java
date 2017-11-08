@@ -13,6 +13,7 @@ import org.opencv.core.Size;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -79,7 +80,23 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
     public void onPause() {
         super.onPause();
         if (mOpenCvCameraView != null)
-            mOpenCvCameraView.disableView();
+                mOpenCvCameraView.disableView();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mOpenCvCameraView != null)
+                mOpenCvCameraView.disableView();
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent return2MainActivity = new Intent(AnalyseOpenCVActivity.this, MainActivity.class);
+        return2MainActivity.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(return2MainActivity);
+        finish();
     }
 
     @Override
@@ -92,6 +109,7 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
     @Override
     public void onCameraViewStopped() {
         mGRAY.release();
+        finish();
     }
 //TODO: Implement imwrite to save analysed photo to external storage
     @Override
@@ -103,7 +121,7 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
 //        Core.flip(mRGBAF, mGRAY, 1);
         Mat circles = new Mat();
         Imgproc.blur(mGRAY, mGRAY, new Size(7, 7), new Point(2, 2));
-        Imgproc.HoughCircles(mGRAY, circles, Imgproc.CV_HOUGH_GRADIENT, 1, 75, 50, 15, 0, 0);
+        Imgproc.HoughCircles(mGRAY, circles, Imgproc.CV_HOUGH_GRADIENT, 1.2, 200, 100, 100, 0, 0);
 
         //TODO: TextView Number of Organisms without crashing
         Log.i(TAG, String.valueOf("Number of Organisms: " + circles.cols()));
