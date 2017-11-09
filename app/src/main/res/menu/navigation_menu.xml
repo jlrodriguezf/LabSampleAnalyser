@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <group android:checkableBehavior="single">
-        <item android:id="@+id/nav_analyse"
-            android:icon="@mipmap/ic_pageview_black_24dp"
-            android:title="Analyse" />
-        <item android:id="@+id/nav_archive"
+        <item
+            android:title="Analyse">
+            <menu>
+                <group
+                    android:id="@+id/menu_top"
+                    android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_analyseLive"
+                        android:icon="@mipmap/ic_pageview_black_24dp"
+                        android:title="Live" />
+
+                    <item
+                        android:id="@+id/nav_analyseStatic"
+                        android:icon="@mipmap/ic_pageview_black_24dp"
+                        android:title="From Picture" />
+                </group>
+            </menu>
+        </item>
+        <item
+            android:id="@+id/nav_archive"
             android:icon="@mipmap/ic_archive_black_24dp"
             android:title="Archive" />
-    </group>
-
-    <group>
-        <item android:id="@+id/nav_settings"
+        <item
+            android:id="@+id/nav_settings"
             android:icon="@mipmap/ic_settings_black_24dp"
             android:title="Settings" />
-        <item android:id="@+id/nav_contact"
-            android:icon="@mipmap/ic_contact_mail_black_24dp"
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@mipmap/ic_archive_black_24dp"
             android:title="Contact" />
-        <item android:id="@+id/nav_help"
-            android:icon="@mipmap/ic_help_black_24dp"
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@mipmap/ic_settings_black_24dp"
             android:title="Help" />
     </group>
-
 </menu>
