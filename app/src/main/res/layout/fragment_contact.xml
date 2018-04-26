@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="mx.unam.cfata.labsampleanalyser.ContactFragment">
 
@@ -9,7 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tab_layout"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"
+        app:tabTextColor="@android:color/white"
+        app:tabSelectedTextColor="@android:color/holo_orange_light"
+        app:tabIndicatorColor="@android:color/holo_orange_light"/>
 
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"

@@ -10,7 +10,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class CustomPageAdapter extends FragmentPagerAdapter {
     private static final String TAG = CustomPageAdapter.class.getSimpleName();
-    private String[] tabTitles = new String[]{"JL", "BM", "UNAM"};
+    private String[] tabTitles = new String[]{"J. L. Rodríguez", "B. E. Millán", "UNAM"};
 
     public CustomPageAdapter(FragmentManager fm){
         super(fm);
