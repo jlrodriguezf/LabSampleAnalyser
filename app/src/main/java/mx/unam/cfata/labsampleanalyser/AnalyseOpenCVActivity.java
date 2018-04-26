@@ -34,10 +34,9 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
         }
     }
 
+    //JAVA CAMERA INITIALIZATION AND VARIABLE SETTING
     private JavaCameraView mOpenCvCameraView;
-    Mat mGRAY;
-//    Mat mRGBAF;
-//    Mat mRGBAT;
+    Mat InputFrame;
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -101,33 +100,48 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
 
     @Override
     public void onCameraViewStarted(int width, int height) {
-//        mGRAY = new Mat(height, width, CvType.CV_16U);
-//        mRGBAF = new Mat(height, width, CvType.CV_16U);
-//        mRGBAT = new Mat(width, width, CvType.CV_16U);
     }
 
     @Override
     public void onCameraViewStopped() {
-        mGRAY.release();
+        //FILE WRITING
+        File filepath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),"LabSampleAnalyser");
+        if (!filepath.exists()) {
+            if (!filepath.mkdirs()) {
+                Log.e(TAG, "Failed to create directory");
+            }
+        }
+        String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss").format(new Date());
+        File imagename = new File(filepath.getPath() + File.separator + "LSA_PNG_" + timeStamp + ".png");
+        String image = imagename.toString();
+        Boolean writeStatus = Imgcodecs.imwrite(image, InputFrame);
+        if (writeStatus)
+            Log.i(TAG, "SUCCESS writing image to external storage...");
+        else
+            Log.i(TAG, "FAILED writing image to external storage...");
+        
+        //MAT RELEASE
+        InputFrame.release();
         finish();
     }
-//TODO: Implement imwrite to save analysed photo to external storage
+
     @Override
+    //CAMERA FRAME INITIALIZATION
     public Mat onCameraFrame(final CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
 
-        Mat mGRAY = inputFrame.gray();
-//        Core.transpose(mGRAY, mRGBAT);
-//        Imgproc.resize(mRGBAT, mRGBAF, mRGBAF.size(), 1, 1, 0);
-//        Core.flip(mRGBAF, mGRAY, 1);
+        //PRE-PROCESSING
+        Mat InputFrame = inputFrame.gray();
         Mat circles = new Mat();
-        Imgproc.blur(mGRAY, mGRAY, new Size(7, 7), new Point(2, 2));
-        Imgproc.HoughCircles(mGRAY, circles, Imgproc.CV_HOUGH_GRADIENT, 1.2, 200, 100, 100, 0, 0);
+        Imgproc.blur(InputFrame, InputFrame, new Size(7, 7), new Point(2, 2));
 
-        //TODO: TextView Number of Organisms without crashing
+        //ACTUAL ALGORITHM
+        Imgproc.HoughCircles(InputFrame, circles, Imgproc.CV_HOUGH_GRADIENT, 1.2, 200, 100, 100, 0, 0);
+
+        //ORGANISM COUNT TEXT
         Log.i(TAG, String.valueOf("Number of Organisms: " + circles.cols()));
+        Imgproc.putText(InputFrame, String.valueOf("Number of Organisms: " + circles.cols()), new Point(10, 50), Core.FONT_HERSHEY_COMPLEX, 1, new Scalar(0, 0, 0), 4);
 
-        Imgproc.putText(mGRAY, String.valueOf("Number of Organisms: " + circles.cols()), new Point(10, 50), Core.FONT_HERSHEY_COMPLEX, 1, new Scalar(0, 0, 0), 4);
-
+        //CONTOUR DRAWING
         if (circles.cols() > 0) {
             for (int x=0; x < Math.min(circles.cols(), 5); x++ ) {
                 double circleVec[] = circles.get(0, x);
@@ -136,28 +150,17 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
                 }
                 Point center = new Point((int) circleVec[0], (int) circleVec[1]);
                 int radius = (int) circleVec[2];
-                Imgproc.circle(mGRAY, center, 3, new Scalar(255, 255, 255), 5);
-                Imgproc.circle(mGRAY, center, radius, new Scalar(255, 255, 255), 2);
+                //CENTER OF CIRCLE
+                Imgproc.circle(InputFrame, center, 3, new Scalar(255, 255, 255), 5);
+                //EXTERNAL RING
+                Imgproc.circle(InputFrame, center, radius, new Scalar(0, 0, 255), 5);
             }
         }
-//        Mat mInter = new Mat();
-//        Imgproc.cvtColor(mGRAY, mInter, Imgproc.COLOR_RGBA2BGR, 3);
-        File filepath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),"LabSampleAnalyser");
-        if (!filepath.exists()) {
-            if (!filepath.mkdirs()) {
-                Log.e(TAG, "Failed to create directory");
-            }
-        }
-        String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss").format(new Date());
-        File imagename = new File(filepath.getPath() + File.separator + "LBA_PNG_" + timeStamp + ".png");
-        String image = imagename.toString();
-        Boolean writeStatus = Imgcodecs.imwrite(image, mGRAY);
-        if (writeStatus)
-            Log.i(TAG, "SUCCESS writing image to external storage...");
-        else
-            Log.i(TAG, "FAILED writing image to external storage...");
+
+        //CAM RELEASE AND RESULT
         circles.release();
-        mGRAY.release();
+        InputFrame.release();
+        //RETURN RESULT AND MAKE IT AVAILABLE TO OTHER METHODS IN RGB COLOR
         return inputFrame.rgba();
     }
 }

@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 25
     buildToolsVersion "26.0.1"
@@ -35,4 +34,7 @@ android {
         compile 'com.android.support:design:25.4.0'
         compile project(':openCVLibrary330')
     }
+}
+dependencies {
+    compile 'com.android.support:design:26.0.0-alpha1'
 }
