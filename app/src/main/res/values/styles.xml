@@ -29,4 +29,5 @@
     <style name="AppPreferenceFragmentCompatStyle" parent="@style/PreferenceFragment.Material">
         <!-- Custom layout for PreferenceFragmentCompat -->
     </style>
+    <color name="graylight">#fafafa</color>
 </resources>
