@@ -17,7 +17,7 @@ public class Author2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_author1, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_author2, container, false);
 
         ImageView github = (ImageView)rootView.findViewById(R.id.github);
         github.setOnClickListener(new View.OnClickListener(){
