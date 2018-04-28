@@ -56,7 +56,7 @@ public class card_item_adapter extends RecyclerView.Adapter<card_item_adapter.ca
         viewHolder.popup_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PopupMenu popup = new PopupMenu(Ctx, viewHolder.card_item);
+                PopupMenu popup = new PopupMenu(Ctx, viewHolder.popup_menu);
                 MenuInflater inflater = popup.getMenuInflater();
                 inflater.inflate(R.menu.popup_menu, popup.getMenu());
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
