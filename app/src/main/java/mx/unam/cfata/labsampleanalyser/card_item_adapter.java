@@ -78,7 +78,6 @@ public class card_item_adapter extends RecyclerView.Adapter<card_item_adapter.ca
             }
         });
     }
-
     @Override
     public int getItemCount() {
         return item.size();
