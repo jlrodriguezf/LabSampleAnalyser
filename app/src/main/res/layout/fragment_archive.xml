@@ -1,12 +1,16 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="mx.unam.cfata.labsampleanalyser.ArchiveFragment">
 
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:padding="5dp"
+        android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Archive" />
+        android:scrollbars="vertical"
+        tools:listitem="@layout/card_item" />
 
-</FrameLayout>
+</RelativeLayout>

@@ -21,4 +21,7 @@
     <string name="author1">J. L. Rodríguez</string>
     <string name="author2">B. E. Millán</string>
     <string name="author3">UNAM</string>
+    <string name="quantifications">Quantifications</string>
+    <string name="rename">Rename</string>
+    <string name="delete">Delete</string>
 </resources>

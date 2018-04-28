@@ -24,7 +24,7 @@
                 android:maxWidth="150dp"
                 android:adjustViewBounds="true"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="16dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                 android:text="Designer \u0026 Developer"
                 android:textColor="@android:color/white"
                 android:textSize="15sp"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="3dp"/>
         </LinearLayout>
         <android.support.v7.widget.CardView
             android:layout_width="300dp"
@@ -175,7 +175,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="+52 1 442 1727278"/>
+                        android:text="+52 1 442 172 7278"/>
                 </LinearLayout>
                 </LinearLayout>
 

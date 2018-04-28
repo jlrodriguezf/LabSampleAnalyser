@@ -1,14 +1,185 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="mx.unam.cfata.labsampleanalyser.Author2">
+    tools:context="mx.unam.cfata.labsampleanalyser.Author1"
+    android:background="@color/graylight"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Main Frame and Social Networks -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="370dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/profile_author2"
+                android:scaleType="fitCenter"
+                android:maxHeight="150dp"
+                android:maxWidth="150dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Dra. Blanca E. Millán Chiu"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Biologist"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:layout_marginTop="3dp"/>
+        </LinearLayout>
+        <android.support.v7.widget.CardView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="250dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:tag="https://github.com/jlrodriguezf"
+                        android:clickable="true"
+                        android:onClick="openBrowser"
+                        android:id="@+id/github"
+                        android:layout_width="55dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.61"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/github" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:tag="https://plus.google.com/u/0/116908567238395484216"
+                        android:clickable="true"
+                        android:onClick="openBrowser"
+                        android:id="@+id/google"
+                        android:layout_width="67dp"
+                        android:layout_height="76dp"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxHeight="40dp"
+                        android:maxWidth="40dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/google"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:tag="https://jlrodriguezf.github.io"
+                        android:clickable="true"
+                        android:onClick="openBrowser"
+                        android:id="@+id/website"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxHeight="50dp"
+                        android:maxWidth="50dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/website"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+    <!-- Email and Phone -->
+    <ScrollView
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/author2"
-        android:layout_centerInParent="true"/>
+        android:layout_height="wrap_content">
+        <!-- Main Child Layout -->
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
-</RelativeLayout>
+            <!-- Sub-Child Layouts -->
+            <!-- Email -->
+            <LinearLayout
+                android:paddingLeft="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/email_logo"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_email_black_24dp" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/email_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="blanca.millan@gmail.com" />
+            </LinearLayout>
+            <!-- Phone -->
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/phone"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_local_phone_black_24dp" />
+                    <TextView
+                        android:textStyle="bold"
+                        android:id="@+id/phone_content"
+                        android:paddingLeft="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+52 1 442 374 2811"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -12,7 +12,6 @@ import android.widget.ImageView;
 public class Author1 extends Fragment {
 
     public Author1() {
-        // Required empty public constructor
     }
 
     @Override
