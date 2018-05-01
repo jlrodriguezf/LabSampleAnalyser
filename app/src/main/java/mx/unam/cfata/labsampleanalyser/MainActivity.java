@@ -1,10 +1,14 @@
 package mx.unam.cfata.labsampleanalyser;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,10 +16,15 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.karan.churi.PermissionManager.PermissionManager;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AnalyseOpenCVActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private CharSequence mTitle;
+    private PermissionManager permissionManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +49,9 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
         // Navigation View Handle
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        permissionManager = new PermissionManager() {};
+        permissionManager.checkAndRequestPermissions(MainActivity.this);
 
         // Main Fragment (Archive) set on create
         ArchiveFragment archiveFragment = new ArchiveFragment();
@@ -72,7 +84,6 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
         int id = item.getItemId();
 
         if (id == R.id.nav_analyseLive) {
-
             Intent analyseOpenCVActivity = new Intent(MainActivity.this, AnalyseOpenCVActivity.class);
             startActivity(analyseOpenCVActivity);
 
@@ -138,9 +149,13 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
     }
 
     @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        permissionManager.checkResult(requestCode, permissions, grantResults);
+    }
+
+    @Override
     public void setTitle(CharSequence title) {
         mTitle = title;
         getActionBar().setTitle(mTitle);
     }
 }
-//FIXME: Selected Item Highligh only works on Archive and Analyse

@@ -17,7 +17,7 @@
                         android:max="10" />
 
                     <mx.unam.cfata.labsampleanalyser.CustomSeekBarPreference
-                        android:key="pref_hough_minDist  "
+                        android:key="pref_hough_minDist"
                         android:title="@string/pref_hough_minDist"
                         android:summary="@string/pref_hough_minDist_summ"
                         android:defaultValue="75"

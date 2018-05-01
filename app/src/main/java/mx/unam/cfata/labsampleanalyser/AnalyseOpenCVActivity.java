@@ -14,12 +14,15 @@ import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -129,21 +132,30 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
     //CAMERA FRAME INITIALIZATION
     public Mat onCameraFrame(final CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
         //PRE-PROCESSING
+        final Mat circles = new Mat();
         Mat InputFrame = inputFrame.gray();
-        Mat circles = new Mat();
-        Imgproc.blur(InputFrame, InputFrame, new Size(7, 7), new Point(2, 2));
+
+        //Imgproc.GaussianBlur(InputFrame, InputFrame, new Size(9, 9), 2, 2);
 
         //ACTUAL ALGORITHM
-        Imgproc.HoughCircles(InputFrame, circles, Imgproc.CV_HOUGH_GRADIENT, 1.2, 200, 100, 100, 0, 0);
+        Imgproc.HoughCircles(InputFrame, circles, Imgproc.CV_HOUGH_GRADIENT, sharedPreferences.getInt("pref_hough_dp", 1), sharedPreferences.getInt("pref_hough_minDist", 75), sharedPreferences.getInt("pref_hough_oedt", 50), sharedPreferences.getInt("pref_hough_ofdt", 20), sharedPreferences.getInt("pref_hough_minRad", 0), sharedPreferences.getInt("pref_hough_maxRad", 0));
 
         //ORGANISM COUNT TEXT
-        Log.i(TAG, String.valueOf("Number of Organisms: " + circles.cols()));
-        Imgproc.putText(InputFrame, String.valueOf("Number of Organisms: " + circles.cols()), new Point(10, 50), Core.FONT_HERSHEY_COMPLEX, 1, new Scalar(0, 0, 0), 4);
+        runOnUiThread(new Runnable(){
+            @Override
+            public void run() {
+                final TextView textView = (TextView) findViewById(R.id.sample_data);
+                textView.setText("Number of Organisms: " + circles.cols());
+                Log.i(TAG, String.valueOf("Number of Organisms: " + circles.cols()));
+            }
+        });
 
         //CONTOUR DRAWING
         if (circles.cols() > 0) {
-            for (int x=0; x < Math.min(circles.cols(), 5); x++ ) {
+            for (int x=0; x < Math.min(circles.cols(), 10); x++ ) {
                 double circleVec[] = circles.get(0, x);
                 if (circleVec == null) {
                     break;
@@ -151,7 +163,7 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
                 Point center = new Point((int) circleVec[0], (int) circleVec[1]);
                 int radius = (int) circleVec[2];
                 //CENTER OF CIRCLE
-                Imgproc.circle(InputFrame, center, 3, new Scalar(255, 255, 255), 5);
+                Imgproc.circle(InputFrame, center, 3, new Scalar(255, 0, 0), 5);
                 //EXTERNAL RING
                 Imgproc.circle(InputFrame, center, radius, new Scalar(0, 0, 255), 5);
             }

@@ -1,5 +1,7 @@
 package org.opencv.android;
 
+import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.List;
 
 import android.content.Context;
@@ -10,7 +12,10 @@ import android.hardware.Camera.PreviewCallback;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.Display;
+import android.view.Surface;
 import android.view.ViewGroup.LayoutParams;
+import android.view.WindowManager;
 
 import org.opencv.BuildConfig;
 import org.opencv.core.CvType;
@@ -180,7 +185,7 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
                     mFrameHeight = params.getPreviewSize().height;
 
                     if ((getLayoutParams().width == LayoutParams.MATCH_PARENT) && (getLayoutParams().height == LayoutParams.MATCH_PARENT))
-                        mScale = Math.min(((float)height)/mFrameHeight, ((float)width)/mFrameWidth);
+                        mScale = Math.min(((float)height)/mFrameWidth, ((float)width)/mFrameHeight);
                     else
                         mScale = 0;
 
@@ -213,6 +218,10 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
 
                     /* Finally we are ready to start the preview */
                     Log.d(TAG, "startPreview");
+                    //Orientation Problem
+                    //setDisplayOrientation(mCamera, 90);
+                    //mCamera.setPreviewDisplay(getHolder());
+                    //Preview Start
                     mCamera.startPreview();
                 }
                 else
@@ -224,6 +233,21 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
         }
 
         return result;
+    }
+
+    // New Method to solve camera orientation problem
+    protected void setDisplayOrientation(Camera camera, int angle){
+        Method downPolymorphic;
+        try
+        {
+            downPolymorphic = camera.getClass().getMethod("setDisplayOrientation", new Class[] { int.class });
+            if (downPolymorphic != null)
+                downPolymorphic.invoke(camera, new Object[] { angle });
+        }
+        catch (Exception e1)
+        {
+            e1.printStackTrace();
+        }
     }
 
     protected void releaseCamera() {
