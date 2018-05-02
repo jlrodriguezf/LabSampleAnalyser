@@ -1,24 +1,20 @@
 package mx.unam.cfata.labsampleanalyser;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.karan.churi.PermissionManager.PermissionManager;
 
-import java.util.ArrayList;
+import java.util.Objects;
 
 public class MainActivity extends AnalyseOpenCVActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout mDrawerLayout;
@@ -35,19 +31,19 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
         mTitle = getTitle();
 
         // Toolbar Handle
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.nav_action);
+        Toolbar mToolbar = findViewById(R.id.nav_action);
         setSupportActionBar(mToolbar);
 
         // Drawer Handle
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        mDrawerLayout = findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         mToggle.setDrawerIndicatorEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         // Navigation View Handle
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         permissionManager = new PermissionManager() {};
@@ -65,7 +61,7 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
 
     @Override
     public void onBackPressed() {
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        mDrawerLayout = findViewById(R.id.drawerLayout);
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
         } else {
@@ -140,10 +136,10 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
 
         }
 
-        getSupportActionBar().setTitle(item.getTitle());
+        Objects.requireNonNull(getSupportActionBar()).setTitle(item.getTitle());
 
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        mDrawerLayout = findViewById(R.id.drawerLayout);
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -156,6 +152,6 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
     @Override
     public void setTitle(CharSequence title) {
         mTitle = title;
-        getActionBar().setTitle(mTitle);
+        Objects.requireNonNull(getActionBar()).setTitle(mTitle);
     }
 }

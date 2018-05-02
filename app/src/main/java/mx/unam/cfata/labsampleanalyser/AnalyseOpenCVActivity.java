@@ -1,18 +1,5 @@
 package mx.unam.cfata.labsampleanalyser;
 
-import org.opencv.android.BaseLoaderCallback;
-import org.opencv.android.CameraBridgeViewBase;
-import org.opencv.android.JavaCameraView;
-import org.opencv.android.LoaderCallbackInterface;
-import org.opencv.android.OpenCVLoader;
-import org.opencv.core.Core;
-import org.opencv.core.Mat;
-import org.opencv.core.Point;
-import org.opencv.core.Scalar;
-import org.opencv.core.Size;
-import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.imgproc.Imgproc;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -23,6 +10,17 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.JavaCameraView;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+import org.opencv.core.Mat;
+import org.opencv.core.Point;
+import org.opencv.core.Scalar;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -62,7 +60,7 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.analyse_layout);
-        mOpenCvCameraView = (JavaCameraView) findViewById(R.id.OpenCvView);
+        mOpenCvCameraView = findViewById(R.id.OpenCvView);
         mOpenCvCameraView.setCvCameraViewListener(this);
     }
 
@@ -147,7 +145,7 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
         runOnUiThread(new Runnable(){
             @Override
             public void run() {
-                final TextView textView = (TextView) findViewById(R.id.sample_data);
+                final TextView textView = findViewById(R.id.sample_data);
                 textView.setText("Number of Organisms: " + circles.cols());
                 Log.i(TAG, String.valueOf("Number of Organisms: " + circles.cols()));
             }
