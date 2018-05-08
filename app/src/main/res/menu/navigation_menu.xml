@@ -13,6 +13,7 @@
                         android:title="Live" />
 
                     <item
+                        android:onClick="onPickImage"
                         android:id="@+id/nav_analyseStatic"
                         android:icon="@mipmap/ic_pageview_black_24dp"
                         android:title="From Picture" />

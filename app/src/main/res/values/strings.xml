@@ -26,4 +26,8 @@
     <string name="delete">Delete</string>
     <string name="numberoforganisms">Number of Organisms: %1$d</string>
     <string name="title_activity_analyse_static">AnalyseStatic</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="from_picture">From Picture</string>
 </resources>

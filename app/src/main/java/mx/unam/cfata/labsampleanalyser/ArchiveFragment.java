@@ -36,7 +36,7 @@ public class ArchiveFragment extends Fragment {
         View layout = inflater.inflate(R.layout.fragment_archive, container, false);
         fill_card_list();
 
-        recyclerView = (RecyclerView) layout.findViewById(R.id.recyclerview);
+        recyclerView = layout.findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(layoutManager);
 
         layoutManager = new LinearLayoutManager(getContext());

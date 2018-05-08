@@ -153,7 +153,7 @@ public class AnalyseOpenCVActivity extends AppCompatActivity implements CameraBr
 
         //CONTOUR DRAWING
         if (circles.cols() > 0) {
-            for (int x=0; x < Math.min(circles.cols(), 10); x++ ) {
+            for (int x=0; x > circles.cols(); x++ ) {
                 double circleVec[] = circles.get(0, x);
                 if (circleVec == null) {
                     break;

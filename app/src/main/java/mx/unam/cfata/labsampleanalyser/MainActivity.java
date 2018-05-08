@@ -1,8 +1,8 @@
 package mx.unam.cfata.labsampleanalyser;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -11,9 +11,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.karan.churi.PermissionManager.PermissionManager;
+import com.mvc.imagepicker.ImagePicker;
 
+import java.io.ByteArrayOutputStream;
 import java.util.Objects;
 
 public class MainActivity extends AnalyseOpenCVActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -21,11 +24,14 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
     private ActionBarDrawerToggle mToggle;
     private CharSequence mTitle;
     private PermissionManager permissionManager;
+    private ImageView imageView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        imageView = findViewById(R.id.pickedImage);
 
         // Title
         mTitle = getTitle();
@@ -74,18 +80,53 @@ public class MainActivity extends AnalyseOpenCVActivity implements NavigationVie
         return mToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 
+    public void onPickImage(MenuItem item) {
+        ImagePicker.pickImage(this, "Select your sample:");
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Bitmap pickedImage = ImagePicker.getImageFromResult(this, requestCode, resultCode, data);
+        if (pickedImage != null) {
+
+            //Bitmap conversion to fragment
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            pickedImage.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byte[] byteArray = stream.toByteArray();
+            //Fragment initialization
+            AnalyseStatic analyseStaticFragment = new AnalyseStatic();
+            //Arguments bundle for bitmap passing
+            Bundle bundle = new Bundle();
+            bundle.putByteArray("pickedImage", byteArray);
+            analyseStaticFragment.setArguments(bundle);
+            //Fragment transaction
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction()
+                    .replace(R.id.relLayout4F,
+                            analyseStaticFragment,
+                            analyseStaticFragment.getTag())
+                    //Avoiding error in stream
+                    .commitAllowingStateLoss();
+        }
+        //Close drawer after bitmap has been loaded
+        mDrawerLayout.closeDrawer(GravityCompat.START);
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Navigation View Item Clicks
         int id = item.getItemId();
 
         if (id == R.id.nav_analyseLive) {
+
+            //Analyse Live Activity
             Intent analyseOpenCVActivity = new Intent(MainActivity.this, AnalyseOpenCVActivity.class);
             startActivity(analyseOpenCVActivity);
 
         } else if (id == R.id.nav_analyseStatic) {
-            Intent CameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivity(CameraIntent);
+            //Analyse Static Fragment suppressed and moved into onActivityResult for bitmap passing
 
         } else if (id == R.id.nav_archive) {
 
